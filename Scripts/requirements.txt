@@ -1,4 +1,3 @@
 Faker
 mysql-connector-python
-mariadb 
 psycopg2-binary

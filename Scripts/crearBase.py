@@ -1,6 +1,6 @@
 import mysql.connector
 import psycopg2
-import mariadb
+
 
 SERVER_CREDS_mysql = {
     "host": "localhost",
@@ -459,7 +459,7 @@ def create_db_and_schema(db_name, config, creds, sql):
                     user=creds["user"], password=creds["password"]
                 )
             else:
-                conn = mariadb.connect(
+                conn = mysql.connector.connect(
                     host=creds["host"], port=config["port"],
                     user=creds["user"], password=creds["password"]
                 )

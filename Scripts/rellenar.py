@@ -15,7 +15,6 @@ import random
 from faker import Faker
 import mysql.connector
 import psycopg2
-import mariadb
 
 # Inicializar Faker
 fake = Faker('es_ES')
@@ -29,7 +28,7 @@ mysql_conn = mysql.connector.connect(
     database="empleosDBmysql"
 )
 
-mariadb_conn = mariadb.connect(
+mariadb_conn = mysql.connector.connect(
     host="localhost",
     user="root",
     port=3307,

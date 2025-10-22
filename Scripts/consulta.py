@@ -3,7 +3,6 @@
 
 import json
 import mysql.connector
-import mariadb
 import psycopg2
 from decimal import Decimal
 from datetime import date, datetime
@@ -80,7 +79,7 @@ def analizar_mysql():
     save_json("analisis_mysql.json", data)
 
 def analizar_mariadb():
-    conn = mariadb.connect(**MARIADB)
+    conn = mysql.connector.connect(**MARIADB)
     cur = conn.cursor()
 
     # 1️ Recomendaciones con mayor afinidad por usurios. Esto nos permite que oferta encaja mejor con cada usuario
